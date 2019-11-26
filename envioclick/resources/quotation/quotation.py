@@ -28,13 +28,17 @@ class Quotation(Resource):
 
     @classmethod
     def create(cls, quotation_request: QuotationRequest) -> 'Quotation':
-        response = cls._client.post(cls._endpoint, json=quotation_request.to_dict())
+        response = cls._client.post(
+            cls._endpoint, json=quotation_request.to_dict()
+        )
         return cls(**response)
 
     def to_dict(self):
         return dict(
             status=self.status,
             status_codes=self.status_codes,
-            status_messages=[message.to_dict() for message in self.status_messages],
+            status_messages=[
+                message.to_dict() for message in self.status_messages
+            ],
             data=self.data.to_dict(),
         )

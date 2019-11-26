@@ -6,9 +6,7 @@ from envioclick.resources import Resource, ShipmentRequest
 from envioclick.resources.package import Package
 from envioclick.resources.status_message import StatusMessage
 
-SANDBOX = os.getenv(
-    'SANDBOX', 'false'
-).lower() == 'true'
+SANDBOX = os.getenv('SANDBOX', 'false').lower() == 'true'
 
 
 @dataclass
@@ -70,7 +68,9 @@ class Data:
 
 
 class Shipment(Resource):
-    _endpoint: ClassVar[str] = '/sandbox_shipment/request' if SANDBOX else '/shipment/request'
+    _endpoint: ClassVar[
+        str
+    ] = '/sandbox_shipment/request' if SANDBOX else '/shipment/request'
     status: str
     status_codes: List[int]
     status_messages: List[StatusMessage]
@@ -78,13 +78,17 @@ class Shipment(Resource):
 
     @classmethod
     def create(cls, shipment_request: ShipmentRequest) -> 'Shipment':
-        response = cls._client.post(cls._endpoint, json=shipment_request.to_dict())
+        response = cls._client.post(
+            cls._endpoint, json=shipment_request.to_dict()
+        )
         return cls(**response)
 
     def to_dict(self):
         return dict(
             status=self.status,
             status_codes=self.status_codes,
-            status_messages=[message.to_dict() for message in self.status_messages],
+            status_messages=[
+                message.to_dict() for message in self.status_messages
+            ],
             data=self.data.to_dict(),
         )

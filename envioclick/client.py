@@ -1,5 +1,5 @@
 import os
-from typing import Any, ClassVar, Dict, Optional, Tuple, Union
+from typing import Any, ClassVar, Dict, Optional
 
 from requests import Response, Session
 
@@ -19,13 +19,11 @@ class Client:
     shipment: ClassVar = Shipment
     tracking: ClassVar = Tracking
 
-    def __init__(
-            self, api_key: Optional[str] = None
-    ):
+    def __init__(self, api_key: Optional[str] = None):
         self.session = Session()
         self.headers = {
             'Authorization': api_key or os.getenv('API_KEY'),
-            'User-Agent': f'envioclick/{client_version}'
+            'User-Agent': f'envioclick/{client_version}',
         }
         Resource._client = self
 
@@ -36,10 +34,7 @@ class Client:
         return self.request('post', endpoint, **kwargs)
 
     def request(
-            self,
-            method: str,
-            endpoint: str,
-            **kwargs: Any,
+        self, method: str, endpoint: str, **kwargs: Any,
     ) -> Dict[str, Any]:
         url = self.base_url + endpoint
         headers = self.headers

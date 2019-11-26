@@ -33,9 +33,7 @@ class StatusMessage:
     request: str
 
     def to_dict(self):
-        return dict(
-            request=self.request,
-        )
+        return dict(request=self.request,)
 
 
 class TrackingBatch(Resource):
@@ -46,6 +44,10 @@ class TrackingBatch(Resource):
     data: Dict[str, Union[DatumClass, str]]
 
     @classmethod
-    def retrive_batc(cls, tracking_request: TrackingRequestList) -> 'TrackingBatch':
-        response = cls._client.post(cls._endpoint, json=tracking_request.to_dict())
+    def retrive_batc(
+        cls, tracking_request: TrackingRequestList
+    ) -> 'TrackingBatch':
+        response = cls._client.post(
+            cls._endpoint, json=tracking_request.to_dict()
+        )
         return cls(**response)

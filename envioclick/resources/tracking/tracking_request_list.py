@@ -7,6 +7,4 @@ class TrackingRequestList:
     tracking_codes: List[str]
 
     def to_dict(self):
-        return dict(
-            tracking_codes=self.tracking_codes
-        )
+        return dict(tracking_codes=self.tracking_codes)

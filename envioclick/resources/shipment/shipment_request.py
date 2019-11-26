@@ -21,9 +21,7 @@ class StatusMessage:
     request: str
 
     def to_dict(self):
-        return dict(
-            request=self.request
-        )
+        return dict(request=self.request)
 
 
 @dataclass
@@ -37,6 +35,8 @@ class ShipmentRequest:
         return dict(
             status=self.status,
             status_codes=self.status_codes,
-            status_messages=[message.to_dict() for message in self.status_messages],
-            data=self.data.to_dict()
+            status_messages=[
+                message.to_dict() for message in self.status_messages
+            ],
+            data=self.data.to_dict(),
         )
