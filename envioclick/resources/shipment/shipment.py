@@ -6,7 +6,9 @@ from envioclick.resources import Resource, ShipmentRequest
 from envioclick.resources.package import Package
 from envioclick.resources.status_message import StatusMessage
 
-SANDBOX = os.getenv('SANDBOX_MODE')
+SANDBOX = os.getenv(
+    'SANDBOX', 'false'
+).lower() == 'true'
 
 
 @dataclass
