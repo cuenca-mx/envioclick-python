@@ -19,7 +19,7 @@ class StatusMessage:
 
 
 @dataclass
-class TrackingRequestList:
+class TrackingResponseList:
     status: str
     status_codes: List[int]
     status_messages: List[StatusMessage]

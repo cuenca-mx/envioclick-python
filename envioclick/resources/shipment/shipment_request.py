@@ -1,34 +1,8 @@
 from dataclasses import dataclass
 from typing import List
-
-
-@dataclass
-class Insurance:
-    content_value: float
-    amount_insurance: float
-
-
-@dataclass
-class Package:
-    description: str
-    content_value: float
-    weight: float
-    length: float
-    height: float
-    width: float
-
-
-@dataclass
-class Rate:
-    id_rates: int
-    id_product: int
-    product: str
-    vehicle: str
-    id_carrier: int
-    carrier: str
-    total: float
-    delivery_type: str
-    delivery_days: int
+from envioclick.resources.insurance import Insurance
+from envioclick.resources.package import Package
+from envioclick.resources.rate import Rate
 
 
 @dataclass
