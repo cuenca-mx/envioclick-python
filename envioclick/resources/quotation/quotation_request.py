@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+
 from envioclick.resources.package import Package
 
 
