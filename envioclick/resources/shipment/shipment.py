@@ -67,6 +67,7 @@ class Data:
         )
 
 
+@dataclass
 class Shipment(Resource):
     _endpoint: ClassVar[
         str

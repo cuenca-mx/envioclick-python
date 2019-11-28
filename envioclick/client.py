@@ -22,7 +22,7 @@ class Client:
     def __init__(self, api_key: Optional[str] = None):
         self.session = Session()
         self.headers = {
-            'Authorization': api_key or os.getenv('API_KEY'),
+            'Authorization': api_key or os.getenv('API_KEY'),  # type: ignore
             'User-Agent': f'envioclick/{client_version}',
         }
         Resource._client = self

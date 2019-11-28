@@ -27,6 +27,7 @@ class Data:
         )
 
 
+@dataclass
 class Tracking(Resource):
     _endpoint: ClassVar[str] = '/track'
     status: str

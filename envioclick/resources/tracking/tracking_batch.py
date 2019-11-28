@@ -36,6 +36,7 @@ class StatusMessage:
         return dict(request=self.request,)
 
 
+@dataclass
 class TrackingBatch(Resource):
     _endpoint: ClassVar[str] = '/track-batch'
     status: str
