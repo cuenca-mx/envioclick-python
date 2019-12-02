@@ -117,3 +117,4 @@ venv.bak/
 
 # others
 .DS_Store
+/.dmypy.json

@@ -20,7 +20,7 @@ with open('README.md', 'r') as f:
 
 setup(
     name='envioclick',
-    version=version.__version__,
+    version=version.__version__,  # type: ignore
     author='Cuenca',
     author_email='dev@cuenca.com',
     description='Client library for api.envioclickpro.com',

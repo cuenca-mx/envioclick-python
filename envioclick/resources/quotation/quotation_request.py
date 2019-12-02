@@ -11,7 +11,7 @@ class QuotationRequest:
 
     def to_dict(self) -> dict:
         return dict(
-            originZipCode=self.origin_zip_code,
+            origin_zip_code=self.origin_zip_code,
             destinationZipCode=self.destination_zip_code,
             package=self.package.to_dict(),
         )
