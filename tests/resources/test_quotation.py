@@ -6,8 +6,8 @@ from envioclick.resources import QuotationRequest
 
 @pytest.mark.vcr(record=True)
 def test_quotation_request():
-    client = Client('wrong_creds')
-    d = {
+    client = Client()
+    data = {
         "package": {
             "description": "Pink iPad",
             "contentValue": 120.01,
@@ -19,5 +19,5 @@ def test_quotation_request():
         "origin_zip_code": "44100",
         "destination_zip_code": "44510",
     }
-    qr = QuotationRequest(**d)
+    qr = QuotationRequest(**data)
     client.quotation.create(qr)

@@ -1,0 +1,66 @@
+interactions:
+- request:
+    body: '{"origin_zip_code": "44100", "destinationZipCode": "44510"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '59'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - envioclick/0.0.1
+    method: POST
+    uri: https://api.envioclickpro.com/api/v1/quotation
+  response:
+    body:
+      string: '{"status":"NOT OK","status_codes":[401],"status_messages":[{"error":"Unauthorized."}],"error":"API
+        Key inv\u00e1lido. Revisa que tu API key sea v\u00e1lido. Puedes encontrar
+        tu  API Key en tu cuenta de www.envioclickpro.com"}'
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Authorization, Content-Type, Accept
+      Access-Control-Allow-Methods:
+      - POST, GET, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 53ef87009e5d9aee-DFW
+      Cache-Control:
+      - no-cache, private
+      Connection:
+      - keep-alive
+      Content-Security-Policy:
+      - base-uri 'self'; default-src 'self'; font-src 'self' fonts.gstatic.com; img-src
+        'self'; script-src 'self'; style-src 'self' 'unsafe-inline' fonts.googleapis.com
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 02 Dec 2019 18:57:35 GMT
+      Expect-CT:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cfduid=d8510611a661c77ab07e4ea47945f63d11575313054; expires=Wed, 01-Jan-20
+        18:57:34 GMT; path=/; domain=.envioclickpro.com; HttpOnly; Secure
+      Vary:
+      - Authorization,Accept-Encoding
+      X-RateLimit-Limit:
+      - '360'
+      X-RateLimit-Remaining:
+      - '359'
+      content-length:
+      - '225'
+    status:
+      code: 401
+      message: Unauthorized
+version: 1

@@ -2,9 +2,11 @@ import os
 from dataclasses import dataclass
 from typing import ClassVar, List, Optional
 
-from envioclick.resources import Resource, ShipmentRequest
+from envioclick.resources import Resource
 from envioclick.resources.package import Package
 from envioclick.resources.status_message import StatusMessage
+
+from .shipment_request import ShipmentRequest
 
 SANDBOX = os.getenv('SANDBOX', 'false').lower() == 'true'
 
