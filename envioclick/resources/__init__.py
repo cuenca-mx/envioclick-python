@@ -13,18 +13,15 @@ __all__ = [
     'TrackingRequestList',
 ]
 
-from envioclick.resources.quotation.quotation import Quotation
-from envioclick.resources.quotation.quotation_request import QuotationRequest
-from envioclick.resources.shipment.shipment import Shipment
-from envioclick.resources.shipment.shipment_request import ShipmentRequest
-from envioclick.resources.tracking.tracking import Tracking
-from envioclick.resources.tracking.tracking_request import TrackingRequest
-from envioclick.resources.tracking.tracking_request_list import (
-    TrackingRequestList,
-)
-
 from .base import Resource
 from .insurance import Insurance
 from .package import Package
+from .quotation import Quotation
+from .quotation_request import QuotationRequest
 from .rate import Rate
+from .shipment import Shipment
+from .shipment_request import ShipmentRequest
 from .status_message import StatusMessage
+from .tracking import Tracking
+from .tracking_request import TrackingRequest
+from .tracking_request_list import TrackingRequestList

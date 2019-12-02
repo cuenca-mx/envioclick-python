@@ -4,15 +4,9 @@ from envioclick import Client
 from envioclick.resources import QuotationRequest
 
 
-@pytest.mark.vcr
-def test_client():
-    client = Client()
-    assert client
-
-
 @pytest.mark.vcr(record=True)
-def test_failed_auth():
-    client = Client('wrong', 'creds')
+def test_quotation_request():
+    client = Client('wrong_creds')
     d = {
         "package": {
             "description": "Pink iPad",

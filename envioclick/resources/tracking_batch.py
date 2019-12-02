@@ -3,9 +3,7 @@ from datetime import datetime
 from typing import ClassVar, Dict, List, Union
 
 from envioclick.resources import Resource
-from envioclick.resources.tracking.tracking_request_list import (
-    TrackingRequestList,
-)
+from envioclick.resources.tracking_request_list import TrackingRequestList
 
 
 @dataclass

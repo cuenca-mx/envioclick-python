@@ -4,7 +4,7 @@ from typing import ClassVar, List
 
 from envioclick.resources import Resource
 from envioclick.resources.status_message import StatusMessage
-from envioclick.resources.tracking.tracking_request import TrackingRequest
+from envioclick.resources.tracking_request import TrackingRequest
 
 
 @dataclass
